@@ -1,10 +1,32 @@
 var React = require('react');
+var TodoList = require('TodoList');
 
 var TodoApp = React.createClass({
+    getInitialState: function () {
+        return {
+            todos: [
+                {
+                    id: 1,
+                    text: 'walk the dog'
+                },  {
+                    id: 2,
+                    text: 'feed the cat'
+                },   {
+                    id: 3,
+                    text: 'shopping'
+                },   {
+                    id: 4,
+                    text: 'hit the gym'
+                }
+            ]
+        };
+    },
     render: function () {
+        var {todos} = this.state;
+
         return (
             <div>
-              <h3>TodoApp.jsx</h3>  
+                <TodoList todos={todos}/>
             </div>
         )
     }
