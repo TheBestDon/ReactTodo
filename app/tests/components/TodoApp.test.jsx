@@ -36,7 +36,7 @@ describe('TodoApp', () => {
     expect(todoApp.state.todos[0].completed).toBe(false);
     todoApp.handleToggle(11);
     expect(todoApp.state.todos[0].completed).toBe(true);
-   // expect(todoApp.state.todos[0].completedAt).toBeA('number');
+    expect(todoApp.state.todos[0].completedAt).toBeA('number');
   });
 
   // Test that when toggle from true to false, completedAt get removed
