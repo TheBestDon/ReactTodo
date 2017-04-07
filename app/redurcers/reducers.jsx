@@ -42,6 +42,8 @@ var moment = require('moment');
                         completed: nextCompleted,
                         completedAt: nextCompleted ? moment().unix() : undefined
                     };
+                } else {
+                    return todo;
                 }
             });
 
