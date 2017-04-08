@@ -11,14 +11,13 @@ describe('TodoSearch', () => {
     expect(TodoSearch).toExist();
   }); 
 
-   it('should dispatch SET_SEARCH_TEST on input change', () => {
+   it('should dispatch SET_SEARCH_TEXT on input change', () => {
+    var searchText = 'Dog';
     var action = {
       type: 'SET_SEARCH_TEXT',
       searchText
     };
-    var searchText = 'Dog';
     var spy = expect.createSpy();
-    
     var todoSearch = TestUtils.renderIntoDocument(<TodoSearch dispatch={spy}/>);
 
     todoSearch.refs.searchText.value = searchText;
