@@ -113,7 +113,7 @@ export var startLogin = () => {
 export var logout = () => {
   return {
     type: 'LOGOUT'
-  };
+  }; 
 };
 
 export var startLogout = () => {
