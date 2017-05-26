@@ -95,9 +95,7 @@ describe('Actions', () => {
     var todosRef;
 
     beforeEach((done) => {
-      var credential = firebase.auth.GithubAuthProvider.credential(process.env.GITHUB_ACCESS_TOKEN);
-
-      firebase.auth().signInWithCredential(credential).then((user) => {
+      firebase.auth().signInAnonymously().then((user) => {
         uid = user.uid;
         todosRef = firebaseRef.child(`users/${uid}/todos`);
 
@@ -109,7 +107,7 @@ describe('Actions', () => {
           text: 'Something to do',
           completed: false,
           createdAt: 23453453
-        })
+        });
       })
       .then(() => done())
       .catch(done);
